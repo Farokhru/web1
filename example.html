@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        * {}
+
+        .parent {
+            width: 450px;
+            height: 300px;
+            background-image: url('b.jpg');
+            margin: 50px auto;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .parent::after{
+            content: 'This is space';
+            display: block;
+            width: 100%;
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            background-color: rgba(10, 43, 231, 0.274);
+            position: absolute;
+            top: 100%;
+            transition: 0.5s;
+            transform: translate(0, -100%) rotateX(120deg);
+            transform-origin: bottom center;
+        }
+
+        .parent:hover::after{
+             transform: translate(0, -100%) rotateX(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+    </div>
+</body>
+
+</html>
